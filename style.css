@@ -1,0 +1,100 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#header {
+    overflow: hidden;
+    padding: 20px 10px;
+    background-color: gainsboro;
+}
+
+#header a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 7px;
+    text-align: center;
+    
+}
+
+.header-right {
+    float: right;
+}
+
+#header a.active {
+    background-color: blue;
+    color: white;
+}
+
+#header .title {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+@media screen and (max-width: 730px) {
+    #header a {
+        text-align: center;
+        display: block;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+#checkDark {
+    margin-left: 100px;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+#darkMode {
+    position: absolute;
+}
+
+#checkDarkLabel {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    display: block;
+    float: right;
+    background-color: rgb(240, 236, 231);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#checkDarkLabel::after {
+    content: '';
+    width: 50px;
+    height: 45px;
+    position: absolute;
+    top: 2px;
+    left: 2.5px;
+    border-radius: 180px;
+    background: yellow;
+    transition: 0.3s;
+}
+
+#checkDark:checked + #checkDarkLabel {
+    background-color: #242424;
+}
+
+#checkDark:checked + #checkDarkLabel::after {
+    left: 93px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+#checkDarkLabel:active::after {
+    width: 70px;
+}
+  
