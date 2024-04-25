@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    background-color: #77777775;
 }
 
 #header {
@@ -37,17 +38,6 @@ body {
     font-size: 25px;
     font-weight: bold;
   }
-
-@media screen and (max-width: 730px) {
-    #header a {
-        text-align: center;
-        display: block;
-    }
-
-    .header-right {
-        float: none;
-    }
-}
 
 #checkDark {
     margin-left: 100px;
@@ -97,4 +87,56 @@ body {
 #checkDarkLabel:active::after {
     width: 70px;
 }
-  
+
+.shop .itemList .item img {
+    border-radius: 18px;
+    height: 170px;
+}
+
+.shop .itemList {
+    display: flex;
+}
+
+.shop .itemList .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #ffffff73;
+    width: 250px;
+}
+
+.shop .header {
+    font-weight: 700;
+    margin: 20px;
+}
+
+.shop .itemList .name {
+    font-weight: 700;
+}
+
+.shop {
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 730px) {
+    #header a {
+        text-align: center;
+        display: block;
+    }
+
+    .header-right {
+        float: none;
+    }
+
+    .shop .itemList {
+        flex-wrap: wrap;
+    }
+
+    .shop .itemList .item {
+        width: 100%;
+    }
+}
