@@ -184,6 +184,12 @@ body {
     }
 }
 
+@media screen and (max-width: 500px) {
+    * {
+        overflow-x: hidden; 
+    }
+}
+
 .price {
     font-weight: 600;
     position: relative;
