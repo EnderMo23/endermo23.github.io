@@ -8,8 +8,8 @@ class Item {
 
 function loadItems() {
     const names = ["Chug Jug", "Chug Splash", "Slap Splash", "Chilli Chug Splash", "Flowberry", "Flowberry Fizz"]
-    const item_element = document.getElementById("item");
-    const amount = 9
+    const itemElement = document.getElementById("item");
+    const amount = 27
     const items = []
 
     for (let i = 0; i < amount; i++) {
@@ -21,7 +21,7 @@ function loadItems() {
         ))
 
         const item = items[i]
-        let clone = item_element.cloneNode(true);
+        let clone = itemElement.cloneNode(true);
 
         const infoElement = clone.querySelector(".info h3");
         const priceElement = clone.querySelector(".price");
