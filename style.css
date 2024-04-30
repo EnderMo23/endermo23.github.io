@@ -1,28 +1,51 @@
+@import "variables.css";
+
 * {
     font-family: sans-serif;
     box-sizing: border-box;
+    color: rgb(209, 209, 209);
+}
+
+p {
+    color: var(--text);
+}
+
+a {
+    color: var(--text);
+}
+
+hr {
+    color: var(--overlay);
+    border-top: 2px solid;
 }
 
 body {
     margin: 0;
-    background-color: #77777775;
+    background-color: var(--background);
 }
 
 #header {
     overflow: hidden;
     padding: 20px 10px;
-    background-color: gainsboro;
+    background-color: var(--overlay);
 }
 
 #header a {
     text-decoration: none;
-    color: black;
     font-weight: 600;
     font-size: 18px;
     padding: 12px;
     border-radius: 7px;
     text-align: center;
-    
+}
+
+#footer a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 7px;
+    text-align: center;
 }
 
 .header-right {
@@ -30,14 +53,21 @@ body {
 }
 
 #header a.active {
-    background-color: blue;
-    color: white;
+    background-color: var(--primary);
+}
+
+#header a:hover {
+    background-color: var(--secoundary);
 }
 
 #header .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 25px;
     font-weight: bold;
-  }
+    
+}
 
 #checkDark {
     margin-left: 100px;
@@ -46,11 +76,11 @@ body {
     visibility: hidden;
 }
 
-#darkMode {
+/*#darkMode {
     position: absolute;
-}
+}*/
 
-#checkDarkLabel {
+/*#checkDarkLabel {
     width: 100px;
     height: 50px;
     position: relative;
@@ -84,9 +114,10 @@ body {
     background: linear-gradient(180deg, #777, #3a3a3a);
 }
 
+
 #checkDarkLabel:active::after {
     width: 70px;
-}
+}*/
 
 .shop .itemList .item img {
     border-radius: 18px;
@@ -95,6 +126,8 @@ body {
 
 .shop .itemList {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .shop .itemList .item {
@@ -105,15 +138,15 @@ body {
     border-radius: 20px;
     padding: 20px;
     margin: 20px;
-    background-color: #ffffff73;
+    background-color: var(--overlay);
     width: 250px;
     transition: background-color 0.3s, box-shadow 0.5s;
-    box-shadow: 5px 5px 12px #252525;
+    box-shadow: 0px 0px 25px -5px var(--primary);
 }
 
 .shop .itemList .item:hover {
-    /*background-color: aliceblue;*/
-    box-shadow: none;
+    background-color: var(--secoundary);
+    box-shadow: 0px 0px 5px 1px var(--secoundary);
     cursor: pointer;
 }
 
@@ -154,6 +187,57 @@ body {
 .price {
     font-weight: 600;
     position: relative;
-    left: 10px;
-    bottom: 5.3px;
+    left: 90px;
+    bottom: 26px;
+}
+
+#footer {
+    margin-top: 50px;
+    background-color: black;
+    box-shadow: 0px 0px 15px 10px black;
+    height: 175px;
+}
+
+#footer #links {
+    float: right;
+    width: 30%;
+}
+#headerImpr {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+.shopping-cart:hover {
+    background-color: var(--primary);
+    animation: box-shadow 0.2s forwards;
+}
+
+.shopping-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 0px 3px 2px var(--primary);
+    border-radius: 10px;
+    transition: all 0.6s;
+    height: 35px;
+    width: 55px;
+    transition: background-color 0.3s;
+}
+
+.shopping-cart img {
+    height: 20px;
+    width: 30px;
+    padding-top: 2px;
+}
+
+@keyframes box-shadow {
+    50% {
+        box-shadow: none;
+    }
+
+    100% {
+        box-shadow: 2px 2px 3px var(--primary);
+    }
 }
