@@ -150,3 +150,10 @@ body {
         width: 100%;
     }
 }
+
+.price {
+    font-weight: 600;
+    position: relative;
+    left: 10px;
+    bottom: 5.3px;
+}
