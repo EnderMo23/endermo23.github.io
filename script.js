@@ -1,34 +1,76 @@
-function loadItems() {
-    const item = document.getElementById("item");
-    const amount = 9
-    for (let i = 0; i < amount; i++) {
-        let clone = item.cloneNode(true);
-        const infoElement = clone.querySelector(".info h3");
-        const priceElement = clone.querySelector(".price");
-        infoElement.textContent = getRandomName();
-        priceElement.textContent = getRandomPrice();
-
-        document.getElementById("itemList").appendChild(clone);
-    };
-
-    for (let i; i < amount; i++) {
-
+class Item {
+    constructor(info, price, img) {
+      this.info = info;
+      this.price = price;
+      this.img = img;
     }
 }
 
-function getRandomName() {
+function loadItems() {
+    const names = ["Chug Jug", "Chug Splash", "Slap Splash", "Chilli Chug Splash", "Flowberry", "Flowberry Fizz"]
+    const item_element = document.getElementById("item");
+    const amount = 9
+    const items = []
+
+    for (let i = 0; i < amount; i++) {
+        itemName = names[getRndInt(0, names.length - 1)]
+        items.push(new Item(
+            getRandomName(itemName),
+            getRandomPrice(),
+            getImage(itemName)
+        ))
+
+        const item = items[i]
+        let clone = item_element.cloneNode(true);
+
+        const infoElement = clone.querySelector(".info h3");
+        const priceElement = clone.querySelector(".price");
+        const imgElement = clone.querySelector("img");
+        infoElement.textContent = item.info;
+        priceElement.textContent = item.price;
+        imgElement.src = item.img;
+
+        document.getElementById("itemList").appendChild(clone);
+    };
+}
+
+function getRandomName(itemName) {
     const prefixes = ["Special", "Delicious"]
-    const name = ["Chug Jug", "Chug Splash", "Slap Splash", "Chilli Chug Jug", "Flowberry", "Flowberry Fizz"]
-    const extra = ["Pro Max", "Mini", "XXL", "v2", "v3", "IShowDick", "Pro", "i7", "Q3"]
+    const extras = ["Pro Max", "Mini", "XXL", "v2", "v3", "Pro", "i7", "Q3"]
     const flavours = ["Banana", "Strawberry", "Blueberry", "Vanilla", "Chocolate", "Raspberry"]
-    
+
     let finalName = ""
     if (getRndInt(0, 1) == 1) { finalName += prefixes[getRndInt(0, prefixes.length - 1)] + " " }
-    finalName += name[getRndInt(0, name.length - 1)] + " "
-    finalName += extra[getRndInt(0, extra.length - 1)] + " "
+    finalName += itemName + " "
+    finalName += extras[getRndInt(0, extras.length - 1)] + " "
     if (getRndInt(0, 1) == 1) { finalName += flavours[getRndInt(0, flavours.length - 1)] + " Flavour" }
         
     return finalName
+}
+
+function getImage(itemName) {
+    let fileName
+
+    if (itemName == "Chug Jug") {
+        fileName = "chug_jug_original";
+    };
+    if (itemName == "Chug Splash") {
+        fileName = "chug_splash";
+    }
+    if (itemName == "Slap Splash") {
+        fileName = "slap_splash";
+    }
+    if (itemName == "Chilli Chug Splash") {
+        fileName = "chili_chug_splash"
+    }
+    if (itemName == "Flowberry") {
+        fileName = "flowberry"
+    }
+    if (itemName == "Flowberry Fizz") {
+        fileName = "flowberry_fizz"
+    }
+
+    return "img/products/" + fileName + ".jpeg"
 }
 
 function getRndInt(min, max) {
