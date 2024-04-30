@@ -107,11 +107,14 @@ body {
     margin: 20px;
     background-color: #ffffff73;
     width: 250px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.5s;
+    box-shadow: 5px 5px 12px #252525;
 }
 
 .shop .itemList .item:hover {
-    background-color: aliceblue;
+    /*background-color: aliceblue;*/
+    box-shadow: none;
+    cursor: pointer;
 }
 
 .shop .header {
