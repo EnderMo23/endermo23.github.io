@@ -263,3 +263,22 @@ body {
     right: 20px;
     height: 40px;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    right: 0px;
+    background-color: gray;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
