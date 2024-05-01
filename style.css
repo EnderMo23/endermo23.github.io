@@ -215,3 +215,8 @@ body {
         box-shadow: 2px 2px 3px var(--primary);
     }
 }
+
+.header-right img {
+    position: relative;
+    top: 5px;
+}
