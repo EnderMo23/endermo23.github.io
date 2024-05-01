@@ -1,0 +1,99 @@
+@import "../styles/variables.css";
+
+* {
+    font-family: sans-serif;
+    color: var(--text);
+}
+
+body {
+    background-color: var(--background);
+}
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    height: 400px;
+    width: 50%;
+    border-radius: 50px;
+    border: 3px solid var(--primary);
+    background-color: var(--overlay);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.main input {
+    margin: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--primary);
+    height: 30px;
+}
+
+.sign-in {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.header {
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.submit-btn {
+    font-size: 18px;
+    margin-top: 50px;
+    width: 70%;
+    height: 40px;
+    border: 3px solid var(--primary);
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: var(--secoundary);
+}
+
+.forgot-password a, .sign-up a {
+    text-decoration: none;
+    color: var(--link);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.sign-up {
+    margin-top: 10px;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.password-container img {
+    position: absolute;
+    top: 19px;
+    right: 80px;
+    height: 20px;
+}
+
+.password-container img:hover {
+    cursor: pointer;
+}
