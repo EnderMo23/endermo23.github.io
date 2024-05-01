@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chug Store</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <script defer src="script.js"></script>
-    <link rel="icon" href="img/products/chug_jug_original.jpeg">
+    <script defer src="scripts/script.js"></script>
+    <link rel="icon" href="img/products/chug-jug.jpeg">
 </head>
-<body onload="loadItems()">
+<body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <div id="header">
         <span style="color: white;" class="material-symbols-outlined" id="home">
             home
@@ -17,6 +21,12 @@
 
         <div class="title">
             <header>Chug Store</header>
+        </div>
+
+        <div class="profile">
+            <a href="#">
+                <img src="img/profile.svg" alt="" id="profile-img">
+            </a>
         </div>
 
         <div class="header-right">
@@ -27,20 +37,27 @@
     </div>
 
     <div class="shop" >
-        <h1 class="header">Sort:<br>Filter:</h1>
+        <div class="search-filter">
+            <h3>Sort</h3>
+            <select id="sort-select">
+              <option value="random">Random</option>
+              <option value="price-low">Price (Low to High)</option>
+              <option value="price-high">Price (High to Low)</option>
+            </select>
+          </div>
         <hr>
         <div class="itemList" id="itemList">
             
-            <div class="item" id="item">
-                <img src="img/products/chug_jug_original.jpeg" alt="">
+            <div class="item" id="item" style="visibility: hidden;">
+                <img src="" alt="">
                 <div class="info">
-                    <h3>Chug Jug Original</h3>
+                    <h3>Name</h3>
 
                     <span class="shopping-cart">
                         <img id="imgCart" src="img/shopping_cart.svg" alt="">
                     </span>
 
-                    <span class="price">$4.99</span>
+                    <span class="price">Price</span>
                 </div>
             </div>
 
@@ -53,10 +70,10 @@
         </div>
         
         <ul id="links">
-            <li><a href="#">Discord</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Managemant</a></li>
-            <li><a href="#">Hibutschu Twitch</a></li>
+            <a href="#">• Discord</a>
+            <a href="#">• Support</a>
+            <a href="#">• Managemant</a>
+            <a href="#">• Hibutschu Twitch</a>
         </ul>
     </div>
 </body>
