@@ -29,12 +29,13 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    flex-grow: 1;
 }
 
 .main input {
     margin: 10px;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 3vh;
+    margin-right: 3vh;
     border: 2px solid var(--primary);
     border-radius: 5px;
     text-align: center;
@@ -96,4 +97,37 @@ body {
 
 .password-container img:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 473px){
+    .container {
+        height: 110px;
+    }
+
+    .password-container #visible {
+        right: 30px;
+    }
+
+}
+
+@media screen and (max-width: 617px){
+    .password-container #visible {
+        right: 40px;
+    }
+
+}
+
+@media screen and (max-width: 438px){
+    .container {
+        height: 100px;
+    }
+
+    .password-container #visible {
+        right: 30px;
+    }
+
+    .header {
+        font-size: 20px;
+        padding-top: 10px;
+    }
 }
