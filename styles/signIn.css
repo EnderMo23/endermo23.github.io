@@ -29,7 +29,6 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    flex-grow: 1;
 }
 
 .main input {
@@ -123,7 +122,31 @@ body {
     }
 
     .password-container #visible {
-        right: 30px;
+        right: 40px;
+    }
+
+    .header {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+
+    .main input {
+        width: 200px;
+    }
+
+    .main {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .container {
+        height: 100px;
+    }
+
+    .password-container #visible {
+        right: 40px;
     }
 
     .header {
