@@ -270,11 +270,11 @@ body {
 }
 
 .dropdown-content {
+    right: 0px;
     display: none;
     text-align: center;
     width: 300px;
     position: absolute;
-    right: 0px;
     background-color: gray;
     z-index: 1;
 }
