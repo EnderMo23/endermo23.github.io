@@ -17,13 +17,18 @@
             </div>
     
             <div class="main">
-                <input type="email" placeholder="Enter Email">
 
+                <form action="index.html" id="form">
+
+                    <input type="email" placeholder="Enter Email" name="email" id="email">
+                
                 <div class="password-container">   
-                    <input id="password" type="password" placeholder="Enter Password">
+                    <input id="password" type="password" name="password" placeholder="Enter Password">
                     <img src="img/invisible.svg" alt="" id="visible" onclick="toggleVisibility()">
                 </div>
-                
+
+                </form>
+
             </div>
 
             <div class="forgot-password">
@@ -31,11 +36,11 @@
             </div>
 
             <div class="footer">
-                <a href="index.html">                
-                    <button class="submit-btn">
+                                
+                    <button onclick="checkNotNull()" type="submit" id="submit-btn" form="form">
                         Submit
                     </button>
-                </a>
+               
 
             </div>
 
