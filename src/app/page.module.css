@@ -1,29 +1,3 @@
-@import "variables.css";
-
-* {
-    font-family: sans-serif;
-    box-sizing: border-box;
-    color: rgb(209, 209, 209);
-}
-
-p {
-    color: var(--text);
-}
-
-a {
-    color: var(--text);
-}
-
-hr {
-    color: var(--overlay);
-    border-top: 2px solid;
-}
-
-body {
-    margin: 0;
-    background-color: var(--background);
-}
-
 #header {
     overflow: hidden;
     padding: 20px 10px;
@@ -270,11 +244,11 @@ body {
 }
 
 .dropdown-content {
-    right: 0px;
     display: none;
     text-align: center;
     width: 300px;
     position: absolute;
+    right: 0px;
     background-color: gray;
     z-index: 1;
 }
