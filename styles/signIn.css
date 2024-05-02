@@ -101,19 +101,19 @@ body {
 @media screen and (max-width: 473px){
     .container {
         height: 110px;
+        border: 0;
+        background-color: inherit;
     }
 
     .password-container #visible {
         right: 30px;
     }
-
 }
 
 @media screen and (max-width: 617px){
     .password-container #visible {
         right: 40px;
     }
-
 }
 
 @media screen and (max-width: 438px){
