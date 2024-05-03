@@ -1,0 +1,45 @@
+:root {
+  --background: #fff;
+  --overlay: #bcbcbc;
+  --secoundary: #1B1A55;
+  --primary: #00ADB5;
+  --text: #000000;
+  --link: rgba(125, 199, 229, 0.854);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222831;
+    --overlay: #393E46;
+    --secoundary: #1B1A55;
+    --primary: #00ADB5;
+    --text: #fff;
+    --link: rgba(125, 199, 229, 0.854);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+p {
+  color: var(--text);
+}
+
+hr {
+  color: var(--overlay);
+  border-top: 2px solid;
+}
