@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
-import styles from "./signIn.module.css"
+import styles from "./page.module.css"
 import { useState } from 'react';
 
-export default function Home() {
+export default function SignIn() {
   const [invisible, setInvisible] = useState<boolean>(true);
 
   const toggleVisibility = (): void => {
@@ -23,17 +24,17 @@ export default function Home() {
 
               <div className={styles.passwordContainer}>   
                 <input id="password" type={invisible ? 'password' : 'text'} placeholder="Enter Password"/>
-                <Image src={invisible ? 'img/invisible.svg' : 'img/visible.svg'} alt="" id="visible" onClick={toggleVisibility}/>
+                <Image src={invisible ? 'invisible.svg' : 'visible.svg'} alt="" id="visible" onClick={toggleVisibility} width={20} height={20}/>
               </div>
                 
             </div>
 
            <div className={styles.forgotPassword}>
-             <a href="#">Forgot Password? - Click here!</a>
+             <a href="/">Forgot Password? - Click here!</a>
            </div>
 
             <div className={styles.footer}>
-              <a href="index.html">                
+              <a href="/">                
                 <button className={styles.submitBtn}>
                     Submit
                 </button>
@@ -43,7 +44,7 @@ export default function Home() {
 
           <div className={styles.sigUp}>
             <a href="">
-              Don&apost have an account? - <br/>
+              Don&apos;t have an account? - <br/>
               Create one for free here!
             </a>
           </div>

@@ -146,7 +146,7 @@ export default function Home() {
         <div className={styles.spinner} />
       </div>
 
-      <div id={styles.header}>
+      <div className={styles.header}>
         <span style={{ color: "white" }} className="material-symbols-outlined" id="home">home</span>
 
         <div className={styles.title}>
@@ -154,7 +154,7 @@ export default function Home() {
         </div>
         <div className={styles.profile}>
           <div className={styles.dropdown}>
-            <Image src="/profile.svg" alt="Profile" id="profile-img" width={20} height={20}/>
+            <Image src="/profile.svg" alt="Profile" width={20} height={20}/>
             <div className={styles.dropdownContent}>
               <a href="">Profile</a>
               <a href="">Settings</a>
@@ -164,9 +164,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.headerRight}>
-          <Link href="/signIn" className="active">
-            Sign In
-          </Link>
+          <Link href="/signin" className="active">Sign In</Link>
           <a href="#">Order History</a>
           <a href="#">
             <Image src="/shopping_cart.svg" alt="Shopping Cart" width={10} height={10}/> Shopping-Cart
@@ -199,7 +197,9 @@ export default function Home() {
         </div>
       </div>
       <div id={styles.footer}>
-        <div id={styles.headerImpr}>Impressum</div>
+        <div id={styles.headerImpr}>
+          <h2>Impressum</h2>
+        </div>
         <ul id={styles.links}>
           <a href="#">• Discord</a>
           <a href="#">• Support</a>
