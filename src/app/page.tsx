@@ -168,17 +168,6 @@ export default function Home() {
           
         </div>
       </div>
-      <div className={styles.footer}>
-        <div className={styles.headerImpr}>
-          <h2>Impressum</h2>
-        </div>
-        <ul className={styles.links}>
-          <Link href="/">• Discord</Link>
-          <Link href="/">• Support</Link>
-          <Link href="/">• Managemant</Link>
-          <Link href="/">• Hibutschu Twitch</Link>
-        </ul>
-      </div>
     </main>
   );
 }
