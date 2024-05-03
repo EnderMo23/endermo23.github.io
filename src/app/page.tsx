@@ -185,11 +185,11 @@ export default function Home() {
         <div className={styles.itemList} ref={itemList}>
 
           <div className={styles.item} ref={itemElement} style={{ visibility: "hidden" }}>
-            <Image src="" alt="" ref={imgElement}/>
+            <Image src="" alt="" ref={imgElement} className={styles.img}/>
             <div className={styles.info}>
               <h3 ref={infoElement}>Name</h3>
               <span className={styles.shoppingCart}>
-                <Image className={styles.imgCart} src="/shopping_cart.svg" alt="Shopping Cart" width={20} height={20}/>
+                  <Image className={styles.imgCart} src="shopping_cart.svg" alt="ShoppingCart" height={30} width={30}/>
               </span>
               <span ref={priceElement} className={styles.price}>Price</span>
             </div>
