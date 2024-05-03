@@ -143,35 +143,6 @@ export default function Home() {
 
   return (
     <main>
-      <div className={styles.preloader} ref={preloader}>
-        <div className={styles.spinner} />
-      </div>
-
-      <div className={styles.header}>
-        <span style={{ color: "white" }} className={'material-symbols-outlined'}>home</span>
-
-        <div className={styles.title}>
-          <header>Chug Store</header>
-        </div>
-        <div className={styles.profile}>
-          <div className={styles.dropdown}>
-            <Image src="/profile.svg" alt="Profile" width={40} height={40}/>
-            <div className={styles.dropdownContent}>
-              <Link href="/" className={styles.navLinks}>Profile</Link>
-              <Link href="/" className={styles.navLinks}>Settings</Link>
-              <Link href="/" className={styles.navLinks}>News</Link>
-              <Link href="/" className={styles.navLinks}>LogOut</Link>
-            </div>
-          </div>
-        </div>
-        <div className={styles.headerRight}>
-          <Link href="/signin" className={`${styles.active} ${styles.navLinks}`}>Sign In</Link>
-          <Link href="/" className={styles.navLinks}>Order History</Link>
-          <Link href="/" className={styles.navLinks}>
-            <Image src="/shopping_cart.svg" alt="Shopping Cart" width={20} height={20} className={styles.shoppingCartHeader}/> Shopping-Cart
-          </Link>
-        </div>
-      </div>
       <div className={styles.shop}>
         <div className={styles.searchFilter}>
           <h3>Sort</h3>
