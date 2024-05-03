@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect } from "react";
 
+
 export default function Home() {
   const sortSelect = useRef<HTMLSelectElement>(null);
   const itemList = useRef<HTMLDivElement>(null);
@@ -147,28 +148,28 @@ export default function Home() {
       </div>
 
       <div className={styles.header}>
-        <span style={{ color: "white" }} className="material-symbols-outlined" id="home">home</span>
+        <span style={{ color: "white" }} className={'material-symbols-outlined'}>home</span>
 
         <div className={styles.title}>
           <header>Chug Store</header>
         </div>
         <div className={styles.profile}>
           <div className={styles.dropdown}>
-            <Image src="/profile.svg" alt="Profile" width={20} height={20}/>
+            <Image src="/profile.svg" alt="Profile" width={40} height={40}/>
             <div className={styles.dropdownContent}>
-              <a href="">Profile</a>
-              <a href="">Settings</a>
-              <a href="">News</a>
-              <a href="">LogOut</a>
+              <Link href="/" className={styles.navLinks}>Profile</Link>
+              <Link href="/" className={styles.navLinks}>Settings</Link>
+              <Link href="/" className={styles.navLinks}>News</Link>
+              <Link href="/" className={styles.navLinks}>LogOut</Link>
             </div>
           </div>
         </div>
         <div className={styles.headerRight}>
-          <Link href="/signin" className="active">Sign In</Link>
-          <a href="#">Order History</a>
-          <a href="#">
-            <Image src="/shopping_cart.svg" alt="Shopping Cart" width={10} height={10}/> Shopping-Cart
-          </a>
+          <Link href="/signin" className={`${styles.active} ${styles.navLinks}`}>Sign In</Link>
+          <Link href="/" className={styles.navLinks}>Order History</Link>
+          <Link href="/" className={styles.navLinks}>
+            <Image src="/shopping_cart.svg" alt="Shopping Cart" width={20} height={20} className={styles.shoppingCartHeader}/> Shopping-Cart
+          </Link>
         </div>
       </div>
       <div className={styles.shop}>
@@ -180,7 +181,7 @@ export default function Home() {
             <option value="price-high">Price (High to Low)</option>
           </select>
         </div>
-        <hr />
+        <hr/>
         <div className={styles.itemList} ref={itemList}>
 
           <div className={styles.item} ref={itemElement} style={{ visibility: "hidden" }}>
@@ -188,7 +189,7 @@ export default function Home() {
             <div className={styles.info}>
               <h3 ref={infoElement}>Name</h3>
               <span className={styles.shoppingCart}>
-                <Image id="imgCart" src="/shopping_cart.svg" alt="Shopping Cart" width={20} height={20}/>
+                <Image className={styles.imgCart} src="/shopping_cart.svg" alt="Shopping Cart" width={20} height={20}/>
               </span>
               <span ref={priceElement} className={styles.price}>Price</span>
             </div>
@@ -196,15 +197,15 @@ export default function Home() {
           
         </div>
       </div>
-      <div id={styles.footer}>
-        <div id={styles.headerImpr}>
+      <div className={styles.footer}>
+        <div className={styles.headerImpr}>
           <h2>Impressum</h2>
         </div>
-        <ul id={styles.links}>
-          <a href="#">• Discord</a>
-          <a href="#">• Support</a>
-          <a href="#">• Managemant</a>
-          <a href="#">• Hibutschu Twitch</a>
+        <ul className={styles.links}>
+          <Link href="/">• Discord</Link>
+          <Link href="/">• Support</Link>
+          <Link href="/">• Managemant</Link>
+          <Link href="/">• Hibutschu Twitch</Link>
         </ul>
       </div>
     </main>

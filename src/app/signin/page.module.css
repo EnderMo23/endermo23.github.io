@@ -1,4 +1,5 @@
-.sign-in {
+.signIn {
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,11 +32,6 @@
     height: 30px;
 }
 
-.sign-in {
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
-}
 
 .header {
     font-weight: 600;
@@ -43,7 +39,7 @@
     font-size: 30px;
 }
 
-.submit-btn {
+.submitBtn {
     font-size: 18px;
     margin-top: 50px;
     width: 70%;
@@ -55,52 +51,58 @@
     transition: background-color 0.3s;
 }
 
-.submit-btn:hover {
+.submitBtn:hover {
     background-color: var(--secoundary);
 }
 
-.forgot-password a, .sign-up a {
+.forgotPassword a, .signUp a {
     text-decoration: none;
     color: var(--link);
     font-size: 15px;
     font-weight: 600;
 }
 
-.sign-up {
+.signUp {
     margin-top: 10px;
 }
 
-.password-container {
+.passwordContainer {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.password-container img {
+.passwordContainer img {
     position: absolute;
-    top: 19px;
+    top: 16px;
     right: 80px;
     height: 20px;
 }
 
-.password-container img:hover {
+.passwordContainer img:hover {
     cursor: pointer;
 }
 
 @media screen and (max-width: 473px){
     .container {
         height: 110px;
-        border: 0;
+        border: none;
         background-color: inherit;
     }
 
-    .password-container #visible {
+    .passwordContainer .visible {
         right: 30px;
+    }
+
+    .header {
+        border-radius: 50px;
+        border: 3px solid var(--primary);
+        background-color: var(--overlay);
     }
 }
 
 @media screen and (max-width: 617px){
-    .password-container #visible {
+    .passwordContainer .visible {
         right: 40px;
     }
 }
@@ -110,7 +112,7 @@
         height: 100px;
     }
 
-    .password-container #visible {
+    .passwordContainer .visible {
         right: 40px;
     }
 
@@ -134,7 +136,7 @@
         height: 100px;
     }
 
-    .password-container #visible {
+    .passwordContainer .visible {
         right: 40px;
     }
 
