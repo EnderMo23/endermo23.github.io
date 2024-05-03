@@ -1,9 +1,8 @@
-'use client';
 import React from 'react';
 import styles from '../page.module.css'
 import Link from 'next/link';
 
-const Header: React.FC = () => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
 
@@ -22,4 +21,4 @@ const Header: React.FC = () => {
   )
 };
 
-export default Header;
+export default Footer;

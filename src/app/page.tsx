@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Link from "next/link";
+import Item from "./components/Item";
 import { useRef, useEffect } from "react";
 
 
@@ -73,15 +73,15 @@ export default function Home() {
   }
 
   function displayItems(): void {
-      items.forEach(item => {
-          let clone = itemElement.current?.cloneNode(true) as HTMLElement;
-          clone.style.visibility = "visible";
+    items.forEach(item => {
+      let clone = itemElement.current?.cloneNode(true) as HTMLElement;
+      clone.style.visibility = "visible";
 
-          infoElement.current!.textContent = item.info;
-          priceElement.current!.textContent = item.price;
-          imgElement.current!.src = item.img;
+      infoElement.current!.textContent = item.info;
+      priceElement.current!.textContent = item.price;
+      imgElement.current!.src = item.img;
 
-          itemList.current?.appendChild(clone);
+      itemList.current?.appendChild(clone);
       })
   }
 

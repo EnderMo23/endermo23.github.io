@@ -1,13 +1,14 @@
-'use client';
 import React from 'react';
 import styles from '../page.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className={styles.header}>
-      <span style={{ color: "white" }} className={'material-symbols-outlined'}>home</span>
+      <Link href="/">
+        <span style={{ color: "white" }} className={'material-symbols-outlined'}>home</span>
+      </Link>
 
       <h2 className={styles.title}>Chug Store</h2>
       
