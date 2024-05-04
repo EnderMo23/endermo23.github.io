@@ -11,7 +11,7 @@
     height: 400px;
     width: 50%;
     border-radius: 50px;
-    border: 3px solid var(--primary);
+    border: 7px solid var(--primary);
     background-color: var(--overlay);
 }
 
@@ -96,7 +96,7 @@
 
     .header {
         border-radius: 50px;
-        border: 3px solid var(--primary);
+        border: 7px solid var(--primary);
         background-color: var(--overlay);
     }
 }

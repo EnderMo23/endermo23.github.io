@@ -10,11 +10,11 @@
 
 :root {
   --background: #fff;
-  --overlay: #bcbcbc;
-  --secoundary: #1B1A55;
-  --primary: #00ADB5;
+  --overlay: #E3FEF7;
+  --secoundary: #003C43;
+  --primary: #77B0AA;
   --text: #000000;
-  --link: rgba(125, 199, 229, 0.854);
+  --link: rgba(4, 94, 173, 0.854);
   --overlay-contrast: rgb(119, 119, 119);
 }
 

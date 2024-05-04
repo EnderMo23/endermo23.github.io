@@ -3,7 +3,7 @@ import styles from '../app/page.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Header = () => {
+export default function Header() {
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -34,5 +34,3 @@ const Header = () => {
     </header>
   )
 };
-
-export default Header;

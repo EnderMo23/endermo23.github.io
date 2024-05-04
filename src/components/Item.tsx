@@ -3,11 +3,15 @@ import React from 'react';
 import styles from '../page.module.css'
 import Image from 'next/image';
 
-interface ItemProps {
-  
-}
-
-const Item = ({ title, imgSrc, price }) => {
+export default function Item({
+  title,
+  imgSrc,
+  price,
+}: {
+  title: string,
+  imgSrc: string,
+  price: string,
+}) {
   return (
     <div className={styles.item} style={{ visibility: "hidden" }}>
 
@@ -36,5 +40,3 @@ const Item = ({ title, imgSrc, price }) => {
     </div>
   )
 };
-
-export default Item;

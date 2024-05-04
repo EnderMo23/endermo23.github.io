@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../app/page.module.css'
 import Link from 'next/link';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
 
@@ -20,5 +20,3 @@ const Footer = () => {
     </footer>
   )
 };
-
-export default Footer;
