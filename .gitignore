@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # database
-/pb_data
+/pb_*
