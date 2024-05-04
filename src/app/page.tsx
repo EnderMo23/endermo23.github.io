@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Item from "./components/Item";
+import Item from "../components/Item";
 import { useRef, useEffect } from "react";
 
 
@@ -17,7 +17,7 @@ export default function Home() {
   itemElement.current?.remove();
   const items: Item[] = [];
   const names: string[] = ["Chug Jug", "Chug Splash", "Slap Splash", "Chilli Chug Splash", "Flowberry", "Flowberry Fizz"];
-  const amount: number = 10;
+  const amount: number = 1;
 
   useEffect(() => {
     generateItems();
