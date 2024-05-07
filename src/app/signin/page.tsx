@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css"
 import { useState } from 'react';
+import Link from 'next/link';
 
 import PocketBase from 'pocketbase';
 
@@ -23,6 +24,7 @@ export default function SignIn() {
         "password": "12345678",
         "passwordConfirm": "12345678"
       })
+      console.log("Completed!")
     } catch(error) {
       console.error(error)
     }
@@ -49,9 +51,11 @@ export default function SignIn() {
         </div>
 
         <div className={styles.footer}>
-          <button type="submit" className={styles.submitBtn}>
-            Submit
-            </button>
+          <Link href="/">
+            <button type="submit" className={styles.submitBtn}>Submit</button>
+          </Link>
+          
+
           </div>
 
         <div className={styles.signUp}>
