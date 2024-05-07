@@ -9,6 +9,12 @@ import PocketBase from 'pocketbase';
 const db = new PocketBase('http://127.0.0.1:8090');
 db.autoCancellation(false);
 
+const password = document.getElementById("password") as HTMLInputElement;
+const email = document.getElementById("email") as HTMLInputElement;
+
+//console.log(password);
+//console.log(email.value);
+
 export default function SignIn() {
   const [invisible, setInvisible] = useState<boolean>(true);
 
@@ -21,10 +27,12 @@ export default function SignIn() {
     try {
       await db.collection("test").create({
         "name": "test_username",
+        "password": password.value.toString(),
+        "email": email.value
       })
       console.log("Completed!")
       //Link
-      location.replace("/");
+      //location.replace("/");
     } catch(error) {
       console.error(error)
     }
@@ -39,9 +47,9 @@ export default function SignIn() {
         </div>
 
         <div className={styles.main}>
-          <input type="email" placeholder="Enter Email"/>
+          <input type="email" id="email" placeholder="Enter Email"/>
           <div className={styles.passwordContainer}>   
-            <input className={styles.password} type={invisible ? 'password' : 'text'} placeholder="Enter Password"/>
+            <input className={styles.password} id="password" type={invisible ? 'password' : 'text'} placeholder="Enter Password"/>
             <Image src={invisible ? 'invisible.svg' : 'visible.svg'} alt="" className={styles.visible} onClick={toggleVisibility} width={20} height={20}/>
           </div>
         </div>
@@ -56,7 +64,7 @@ export default function SignIn() {
   
           
 
-          </div>
+        </div>
 
         <div className={styles.signUp}>
           <a href="">
