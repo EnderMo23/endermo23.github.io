@@ -7,6 +7,7 @@ import Link from 'next/link';
 import PocketBase from 'pocketbase';
 
 const db = new PocketBase('http://127.0.0.1:8090');
+db.autoCancellation(false);
 
 export default function SignIn() {
   const [invisible, setInvisible] = useState<boolean>(true);
@@ -15,14 +16,11 @@ export default function SignIn() {
     setInvisible(!invisible);
   };
 
-  async function addUser(): Promise<void> {
+  async function addUser(e:React.FormEvent<HTMLFormElement>): Promise<void> {
+    e.preventDefault()
     try {
-      await db.collection("users").create({
-        "username": "test_username",
-        "email": "test@example.com",
-        "emailVisibility": true,
-        "password": "12345678",
-        "passwordConfirm": "12345678"
+      await db.collection("test").create({
+        "name": "test_username",
       })
       console.log("Completed!")
     } catch(error) {
@@ -51,9 +49,9 @@ export default function SignIn() {
         </div>
 
         <div className={styles.footer}>
-          <Link href="/">
+
             <button type="submit" className={styles.submitBtn}>Submit</button>
-          </Link>
+
           
 
           </div>
