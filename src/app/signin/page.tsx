@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css"
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 
 import PocketBase from 'pocketbase';
@@ -23,6 +23,8 @@ export default function SignIn() {
         "name": "test_username",
       })
       console.log("Completed!")
+      //Link
+      location.replace("/");
     } catch(error) {
       console.error(error)
     }
@@ -51,7 +53,7 @@ export default function SignIn() {
         <div className={styles.footer}>
 
             <button type="submit" className={styles.submitBtn}>Submit</button>
-
+  
           
 
           </div>
