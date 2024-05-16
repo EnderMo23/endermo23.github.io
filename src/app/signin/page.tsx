@@ -4,6 +4,7 @@ import styles from "./page.module.css"
 import { useState, FormEvent } from 'react';
 import PocketBase from 'pocketbase';
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 
 export default function SignIn() {
@@ -16,10 +17,24 @@ export default function SignIn() {
 
   async function addUser(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const email = formData.get("email")
-    const password = formData.get("password")
-    console.debug(email + "    " + password)
+
+    const router = useRouter();
+
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const response = await fetch("", {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email, password})
+    })
+
+    if (response.ok) {
+      router.push('/signin');
+    }
+
+    console.debug(email + "    " + password);
 
     try {
       await db.collection("test").create({
@@ -40,11 +55,14 @@ export default function SignIn() {
         </div>
 
         <div className={styles.main}>
+
           <input type="email" name="email" placeholder="Enter Email"/>
+
           <div className={styles.passwordContainer}>   
             <input className={styles.password} name="password" type={invisible ? 'password' : 'text'} placeholder="Enter Password"/>
             <Image src={invisible ? 'invisible.svg' : 'visible.svg'} alt="" className={styles.visible} onClick={toggleVisibility} width={20} height={20}/>
           </div>
+          
         </div>
 
         <div className={styles.forgotPassword}>
