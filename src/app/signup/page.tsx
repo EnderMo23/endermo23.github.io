@@ -5,7 +5,7 @@ import { useState, FormEvent } from 'react';
 import PocketBase from 'pocketbase';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
-
+import { setCookies } from "../api/cookies";
 
 
 export default function SignUp() {
@@ -24,24 +24,26 @@ export default function SignUp() {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const response = await fetch('/api/middleware.tsx', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({username, email, password})
-
-    })
-
-    if (response.ok) {
-      console.log('Set cookies', response)
-    }
-    else {
-      const errorText = await response.text();
-      console.error('Error whileeeee setting the cookies', errorText)
-    }
 
     try {
+
+      const response = await fetch('/api/middleware', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, email, password})
+  
+      })
+  
+      if (response.ok) {
+        console.log('Set cookies', response)
+      }
+      else {
+        const errorText = await response.text();
+        console.error('Error whileeeee setting the cookies', errorText)
+      }
+
       await db.collection("users").create({
         "username": username,
         "email": email,
