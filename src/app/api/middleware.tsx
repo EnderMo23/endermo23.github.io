@@ -7,11 +7,18 @@ export function handler(req: NextApiRequest, res: NextApiResponse) {
   if(req.method === 'POST') {
     const {username, email, password} = req.body
     if(username & email && password) {
-      res.setHeader('Set-Cookie', [
-        `username=${username}; Path=/; SameSite=Lax; Secure`,
-        `email=${email}; Path=/; SameSite=Lax; Secure`,
-        `password=${password}; Path=/; SameSite=Lax; Secure`,
-      ]);
+      cookies().set("username", username, {
+        sameSite: 'none',
+        secure: true
+      });
+      cookies().set("email", email, {
+        sameSite: 'none',
+        secure: true
+      });
+      cookies().set("password", password, {
+        sameSite: 'none',
+        secure: true
+      });
       res.status(200).json({message: 'Set cookies'})
     }
     else {

@@ -24,7 +24,7 @@ export default function SignUp() {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const response = await fetch('/signin', {
+    const response = await fetch('/api/middleware.tsx', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
