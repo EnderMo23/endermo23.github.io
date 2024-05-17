@@ -24,7 +24,7 @@ export default function SignUp() {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const response = await fetch('/signup', {
+    const response = await fetch('/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export default function SignUp() {
     })
 
     if (response.ok) {
-      console.log('Set cookies')
+      console.log('Set cookies', response)
     }
     else {
       const errorText = await response.text();
