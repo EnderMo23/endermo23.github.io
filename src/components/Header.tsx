@@ -25,6 +25,7 @@ export default function Header() {
       </div>
       
       <div className={styles.headerRight}>
+      <Link href="/signup" className={styles.navLinks}>Sign Up</Link>
         <Link href="/signin" className={`${styles.active} ${styles.navLinks}`}>Sign In</Link>
         <Link href="/" className={styles.navLinks}>Order History</Link>
         <Link href="/" className={styles.navLinks}>
