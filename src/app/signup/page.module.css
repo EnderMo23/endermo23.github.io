@@ -1,0 +1,160 @@
+.signIn {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    height: 400px;
+    width: 50%;
+    border-radius: 50px;
+    border: 7px solid var(--primary);
+    background-color: var(--overlay);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+
+
+.main input {
+    margin: 10px;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--primary);
+    height: 30px;
+}
+
+
+.header {
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.submitBtn {
+    font-size: 18px;
+    margin-top: 50px;
+    width: 70%;
+    height: 40px;
+    border: 3px solid var(--primary);
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: var(--secoundary);
+}
+
+.forgotPassword a, .signin a {
+    text-decoration: none;
+    color: var(--link);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.signin {
+    margin-top: 10px;
+}
+
+.passwordContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.passwordContainer img {
+    position: absolute;
+    top: 16px;
+    right: 80px;
+    height: 20px;
+}
+
+.passwordContainer img:hover {
+    cursor: pointer;
+}
+
+
+.data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data input {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 473px){
+    .container {
+        height: 110px;
+        border: none;
+        background-color: inherit;
+    }
+
+    .passwordContainer .visible {
+        right: 30px;
+    }
+
+    .header {
+        border-radius: 50px;
+        border: 7px solid var(--primary);
+        background-color: var(--overlay);
+    }
+}
+
+@media screen and (max-width: 617px){
+    .passwordContainer .visible {
+        right: 40px;
+    }
+}
+
+@media screen and (max-width: 438px){
+    .container {
+        height: 100px;
+    }
+
+    .passwordContainer .visible {
+        right: 40px;
+    }
+
+    .header {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+
+    .main input {
+        width: 200px;
+    }
+
+    .main {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .container {
+        height: 100px;
+    }
+
+    .passwordContainer .visible {
+        right: 40px;
+    }
+
+    .header {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+}
