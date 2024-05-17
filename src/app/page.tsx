@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Item from "../components/Item";
 import { useRef, useEffect } from "react";
+import { cookies } from "next/headers";
 
 
 export default function Home() {
@@ -22,6 +23,9 @@ export default function Home() {
   useEffect(() => {
     generateItems();
     updateList();
+
+    
+
 
     preloader.current?.remove();
   });

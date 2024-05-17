@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 
 
 
-export default function SignIn() {
+export default function SignUp() {
   const router = useRouter()
   const [invisible, setInvisible] = useState<boolean>(true);
   const db = new PocketBase('http://127.0.0.1:8090');
@@ -23,6 +23,23 @@ export default function SignIn() {
     const username = formData.get("username");
     const email = formData.get("email");
     const password = formData.get("password");
+
+    const response = await fetch('/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({username, email, password})
+
+    })
+
+    if (response.ok) {
+      console.log('Set cookies')
+    }
+    else {
+      const errorText = await response.text();
+      console.error('Error whileeeee setting the cookies', errorText)
+    }
 
     try {
       await db.collection("users").create({
