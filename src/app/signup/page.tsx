@@ -23,6 +23,11 @@ export default function SignUp() {
     const password = formData.get("password") as string;
     const passwordConfirm = formData.get("passwordConfirm") as string;
 
+    const data = {username, email, password}
+
+
+
+
     try {
       createUser(username, email, password, passwordConfirm)
       signIn(email, password)
