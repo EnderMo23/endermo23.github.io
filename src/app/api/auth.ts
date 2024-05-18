@@ -18,6 +18,7 @@ export async function createUser(username: string, email: string, password: stri
     "password": password,
     "passwordConfirm": passwordConfirm
   });
+  setCookies(email)
 }
 
 export async function signIn(email: string, password: string) {

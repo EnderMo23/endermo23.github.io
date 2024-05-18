@@ -25,7 +25,6 @@ export default function SignUp() {
 
     try {
       createUser(username, email, password, passwordConfirm)
-      signIn(email, password)
 
       router.push('/')
     } catch(error) {
