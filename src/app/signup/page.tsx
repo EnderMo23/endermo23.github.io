@@ -2,18 +2,14 @@
 import Image from "next/image";
 import styles from "./page.module.css"
 import { useState, FormEvent } from 'react';
-import PocketBase from 'pocketbase';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
-import { setCookies } from "../api/cookies";
-import { cookies } from "next/headers";
-import {testCookies} from "../api/test-cookies"
+import { createUser, signIn } from "../api/auth";
 
 
 export default function SignUp() {
   const router = useRouter()
   const [invisible, setInvisible] = useState<boolean>(true);
-  const db = new PocketBase('http://127.0.0.1:8090');
 
   function toggleVisibility(): void {
     setInvisible(!invisible);
@@ -25,34 +21,11 @@ export default function SignUp() {
     const username = formData.get("username") as string;
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
+    const passwordConfirm = formData.get("passwordConfirm") as string;
 
     try {
-
-      testCookies(username, email, password)
-
-      /*const response = await fetch('/api/middleware', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({username, email, password})
-  
-      })
-  
-      if (response.ok) {
-        console.log('Set cookies', response)
-      }
-      else {
-        const errorText = await response.text();
-        console.error('Error whileeeee setting the cookies', errorText)
-      }*/
-      await db.collection("users").create({
-        "username": username,
-        "email": email,
-        "emailVisibility": false,
-        "password": password,
-        "passwordConfirm": password
-      });
+      createUser(username, email, password, passwordConfirm)
+      signIn(email, password)
 
       router.push('/')
     } catch(error) {
@@ -78,7 +51,7 @@ export default function SignUp() {
           <div className={styles.passwordContainer}>   
             <input className={styles.password} name="password" type={invisible ? 'password' : 'text'} placeholder="Enter Password"/>
             <Image src={invisible ? 'invisible.svg' : 'visible.svg'} alt="" className={styles.visible} onClick={toggleVisibility} width={20} height={20}/>
-            <input className={styles.password} name="password" type='password' placeholder="Confirm Password"/>
+            <input className={styles.password} name="passwordConfirm" type='password' placeholder="Confirm Password"/>
           </div>
         </div>
 

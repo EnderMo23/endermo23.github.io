@@ -1,6 +1,10 @@
-import {set} from './set-cookies';
-import { NextApiRequest, NextApiResponse } from 'next';
+"use server"
+import { cookies } from "next/headers";
 
-export async function setCookies(req: NextApiRequest, res: NextApiResponse) {
-    await set(req, res);
+export async function setCookies(email: string) {
+  const cookieStore = cookies()
+  cookieStore.set("email", email, {
+    sameSite: "none",
+    secure: true
+  })
 }
