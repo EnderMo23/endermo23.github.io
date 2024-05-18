@@ -6,6 +6,8 @@ import PocketBase from 'pocketbase';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import { setCookies } from "../api/cookies";
+import { cookies } from "next/headers";
+import {testCookies} from "../api/test-cookies"
 
 
 export default function SignUp() {
@@ -20,14 +22,20 @@ export default function SignUp() {
   async function addUser(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const username = formData.get("username");
-    const email = formData.get("email");
-    const password = formData.get("password");
+    const username = formData.get("username") as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    const data = {username, email, password}
+
+
 
 
     try {
 
-      const response = await fetch('/api/middleware', {
+      testCookies(username, email, password)
+
+      /*const response = await fetch('/api/middleware', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,8 +50,7 @@ export default function SignUp() {
       else {
         const errorText = await response.text();
         console.error('Error whileeeee setting the cookies', errorText)
-      }
-
+      }*/
       await db.collection("users").create({
         "username": username,
         "email": email,
