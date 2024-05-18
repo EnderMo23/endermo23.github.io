@@ -5,6 +5,7 @@ import { useState, FormEvent } from 'react';
 import PocketBase from 'pocketbase';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
+import { signIn } from "../api/auth";
 
 
 
@@ -22,19 +23,9 @@ export default function SignIn() {
     const formData = new FormData(event.currentTarget);
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
-    const users = db.collection("users");
-    let authData;
 
     try {
-      authData = await users.authWithPassword(
-        email,
-        password
-      );
-
-      //users.requestVerification(email);
-      console.log(db.authStore.isValid);
-      console.log(db.authStore.token);
-      console.log(db.authStore.model?.id);
+      signIn(email, password)
 
       router.push('/');
     } catch(error) {
