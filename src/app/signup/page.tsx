@@ -26,6 +26,11 @@ export default function SignUp() {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
+    const data = {username, email, password}
+
+
+
+
     try {
 
       testCookies(username, email, password)

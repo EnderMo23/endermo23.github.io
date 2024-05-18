@@ -24,6 +24,9 @@ export default function Home() {
     generateItems();
     updateList();
 
+    
+
+
     preloader.current?.remove();
   });
 
