@@ -3,6 +3,8 @@ import styles from '../app/page.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
 
+import Profile from '@/app/profile/page';
+
 export default function Header() {
   return (
     <header className={styles.header}>
@@ -16,7 +18,7 @@ export default function Header() {
         <div className={styles.dropdown}>
           <Image src="/profile.svg" alt="Profile" width={40} height={40}/>
           <div className={styles.dropdownContent}>
-            <Link href="/" className={styles.navLinks}>Profile</Link>
+            <Link href="profile" className={styles.navLinks}>Profile</Link>
             <Link href="/" className={styles.navLinks}>Settings</Link>
             <Link href="/" className={styles.navLinks}>News</Link>
             <Link href="/" className={styles.navLinks}>LogOut</Link>

@@ -1,0 +1,31 @@
+.sidebar {
+    position: relative;
+}
+
+.hr {
+    position: absolute;
+    height: 100%;
+    left: 150px;
+    bottom: -35px;
+    width: 30px;
+    border-right: 3px solid rgb(54, 59, 65);
+}
+
+.options {
+    margin: 40px;
+}
+
+.options li {
+    position: relative;
+    width: 60px;
+    padding-top: 100px;
+    list-style: none;
+    font-size: 23px;
+}
+
+.options li input {
+    position: absolute;
+    width: 50%;
+    top: 10px;
+    border: 10px solid yellow;
+}
