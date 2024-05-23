@@ -6,26 +6,26 @@
     position: absolute;
     height: 100%;
     left: 150px;
-    bottom: -35px;
+    bottom: -5px;
     width: 30px;
     border-right: 3px solid rgb(54, 59, 65);
 }
 
 .options {
     margin: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
-.options li {
-    position: relative;
-    width: 60px;
-    padding-top: 100px;
-    list-style: none;
-    font-size: 23px;
+.options span {
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    padding-top: 14px;
+    height: 50px;
 }
 
-.options li input {
-    position: absolute;
-    width: 50%;
-    top: 10px;
-    border: 10px solid yellow;
+.options span:hover {
+    background-color: rgba(48, 44, 39, 0.541);
+    border-radius: 10px;
 }
