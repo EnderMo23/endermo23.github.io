@@ -8,8 +8,8 @@
 
 .container {
     text-align: center;
-    height: 400px;
-    width: 50%;
+    height: 70%;
+    width: 60%;
     border-radius: 50px;
     border: 7px solid var(--primary);
     background-color: var(--overlay);
@@ -52,6 +52,23 @@
 }
 
 .submitBtn:hover {
+    background-color: var(--secoundary);
+}
+
+.guestBtn {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 10px;
+    width: 40%;
+    height: 30px;
+    border: 3px solid var(--primary);
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.guestBtn:hover {
     background-color: var(--secoundary);
 }
 

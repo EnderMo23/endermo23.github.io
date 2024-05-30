@@ -29,3 +29,10 @@
     background-color: rgba(48, 44, 39, 0.541);
     border-radius: 10px;
 }
+
+.content {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+}

@@ -5,14 +5,13 @@ import { useState, FormEvent } from 'react';
 import PocketBase from 'pocketbase';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
-import { signIn } from "../api/auth";
+import {createUser ,signIn } from "../api/auth";
 
 
 
 export default function SignIn() {
   const router = useRouter()
   const [invisible, setInvisible] = useState<boolean>(true);
-  const db = new PocketBase('http://127.0.0.1:8090');
 
   function toggleVisibility(): void {
     setInvisible(!invisible);
@@ -30,6 +29,16 @@ export default function SignIn() {
       router.push('/');
     } catch(error) {
       console.error(error);
+    }
+  }
+
+  async function addGuest() {
+    try {
+      createUser("Guest", "guest@guest.com", "guestPassword", "guestPassword")
+      router.push('/');
+    }
+    catch(error){
+      console.error(error)
     }
   }
 
@@ -55,6 +64,10 @@ export default function SignIn() {
 
         <div className={styles.footer}>
           <button type="submit" className={styles.submitBtn}>Login</button>
+        </div>
+
+        <div className={styles.guest}>
+          <button className={styles.guestBtn} onClick={addGuest}>Login as guest</button>
         </div>
 
         <div className={styles.signUp}>

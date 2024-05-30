@@ -4,7 +4,7 @@ import styles from "./page.module.css"
 import { useState, FormEvent } from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
-import { createUser, signIn } from "../api/auth";
+import { createUser } from "../api/auth";
 
 
 export default function SignUp() {
