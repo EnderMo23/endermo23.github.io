@@ -5,11 +5,14 @@ import { useState, FormEvent } from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import { createUser } from "../api/auth";
+import db from "../lib/pocketbase";
 
 
 export default function SignUp() {
   const router = useRouter()
   const [invisible, setInvisible] = useState<boolean>(true);
+
+  const users = db.collection("users")
 
   function toggleVisibility(): void {
     setInvisible(!invisible);

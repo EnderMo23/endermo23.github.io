@@ -5,13 +5,19 @@ import { useState, FormEvent } from 'react';
 import PocketBase from 'pocketbase';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
-import {createUser ,signIn } from "../api/auth";
+import {createUser, signIn, createGuest } from "../api/auth";
+import db from "../lib/pocketbase";
 
 
-
+let counter = 1
 export default function SignIn() {
+
+
+
   const router = useRouter()
   const [invisible, setInvisible] = useState<boolean>(true);
+
+  const guests = db.collection("guests")
 
   function toggleVisibility(): void {
     setInvisible(!invisible);
@@ -34,10 +40,13 @@ export default function SignIn() {
 
   async function addGuest() {
     try {
-      createUser("Guest", "guest@guest.com", "guestPassword", "guestPassword")
-      router.push('/');
+      createUser("Guest" + counter, "guest" + counter + "@guest.com", "guestPassword" + counter, "guestPassword" + counter)
+      //router.push('/');
+      counter += 1
+      console.log(counter)
     }
     catch(error){
+      counter += 1
       console.error(error)
     }
   }

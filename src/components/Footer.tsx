@@ -14,7 +14,7 @@ export default function Footer() {
         <Link href="/">• Discord</Link>
         <Link href="/">• Support</Link>
         <Link href="/">• Managemant</Link>
-        <Link href="/">• Hibutschu Twitch</Link>
+        <Link href="https://www.twitch.tv/hbjju">• Hibutschu Twitch</Link>
       </ul>
 
     </footer>
