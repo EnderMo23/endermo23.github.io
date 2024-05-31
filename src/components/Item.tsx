@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from '../page.module.css'
 import Image from 'next/image';
+import ItemSite from '@/item/page';
 
 export default function Item({
   title,
@@ -26,7 +27,7 @@ export default function Item({
         <h3>{title}</h3>
 
         <span className={styles.shoppingCart}>
-          <Image
+          <Image onClick={ItemSite}
             className={styles.imgCart}
             src="shopping_cart.svg"
             alt="ShoppingCart"
