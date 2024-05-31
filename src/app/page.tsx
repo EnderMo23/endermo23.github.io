@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 import ProductDetails from "./item/page";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Item from "./Item";
+import Item from "./lib/Item";
 
 
 export default function Home() {
