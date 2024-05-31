@@ -1,9 +1,13 @@
 "use client";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Item from "../components/Item";
+//import Item from "../components/Item";
 import { useRef, useEffect } from "react";
 import { cookies } from "next/headers";
+import ProductDetails from "./item/page";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import Item from "./Item";
 
 
 export default function Home() {
@@ -16,6 +20,7 @@ export default function Home() {
   const imgElement = useRef<HTMLImageElement>(null);
 
   itemElement.current?.remove();
+
   const items: Item[] = [];
   const names: string[] = ["Chug Jug", "Chug Splash", "Slap Splash", "Chilli Chug Splash", "Flowberry", "Flowberry Fizz"];
   const amount: number = 10;
@@ -27,7 +32,7 @@ export default function Home() {
     preloader.current?.remove();
   });
 
-  class Item {
+  /*class Item {
     info: string;
     price: string;
     img: string;
@@ -37,7 +42,7 @@ export default function Home() {
       this.price = price;
       this.img = img;
     };
-  };
+  };*/
 
   function sortItems(): void {
     const sortValue = sortSelect.current?.value;
@@ -161,7 +166,7 @@ export default function Home() {
             <div className={styles.info}>
               <h3 ref={infoElement}>Name</h3>
               <span className={styles.shoppingCart}>
-                  <Image className={styles.imgCart} src="shopping_cart.svg" alt="ShoppingCart" height={30} width={30}/>
+                  <Link href="../item"><Image className={styles.imgCart} src="shopping_cart.svg" alt="ShoppingCart" height={30} width={30}/></Link>
               </span>
               <span ref={priceElement} className={styles.price}>Price</span>
             </div>

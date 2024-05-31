@@ -2,7 +2,8 @@
 import React from 'react';
 import styles from '../page.module.css'
 import Image from 'next/image';
-import ItemSite from '@/item/page';
+import ProductDetails from '../app/item/page';
+import Link from 'next/link';
 
 export default function Item({
   title,
@@ -27,7 +28,8 @@ export default function Item({
         <h3>{title}</h3>
 
         <span className={styles.shoppingCart}>
-          <Image onClick={ItemSite}
+
+          <Image
             className={styles.imgCart}
             src="shopping_cart.svg"
             alt="ShoppingCart"
