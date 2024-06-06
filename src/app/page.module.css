@@ -1,7 +1,9 @@
 .header {
     overflow: hidden;
     padding: 20px 10px;
+    z-index: 1;
     background-color: var(--overlay);
+    width: 100%;
 }
 
 .header a {

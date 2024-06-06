@@ -7,6 +7,8 @@ import Profile from '@/app/profile/page';
 
 export default function Header() {
   return (
+
+    
     <header className={styles.header}>
       <Link href="/">
         <span style={{ color: "white" }} className={'material-symbols-outlined'}>home</span>
